@@ -36,7 +36,7 @@ func main() {
 	r.GET("/user/list", listUsers)
 
 	fmt.Println("Server 2 is running on :8082")
-	if err := r.Run("auth:8082"); err != nil {
+	if err := r.Run("auth2:8082"); err != nil {
 		log.Fatal(err)
 	}
 }

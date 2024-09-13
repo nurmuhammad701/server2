@@ -10,7 +10,7 @@ CREATE TABLE users (
 CREATE SERVER server1_fdw FOREIGN DATA WRAPPER postgres_fdw OPTIONS (host '13.38.70.151', port '5432', dbname 'server1_db');
 CREATE USER MAPPING FOR postgres SERVER server1_fdw OPTIONS (user 'postgres', password 'your_password');
 CREATE FOREIGN TABLE users_server1 (
-    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+    id UUID,
     username VARCHAR(50),
     email VARCHAR(100)
 ) SERVER server1_fdw OPTIONS (schema_name 'public', table_name 'users');
